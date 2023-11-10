@@ -1,5 +1,6 @@
 "use client";
 import Button from "@/app/components/Button";
+import ProductImage from "@/app/components/products/ProductImage";
 import SetColor from "@/app/components/products/SetColor";
 import SetQuantity from "@/app/components/products/SetQuantity";
 import { Rating } from "@mui/material";
@@ -66,8 +67,12 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   }, [cartProduct.quantity]);
 
   return (
-    <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-      <div>Images</div>
+    <div className="grid grid-cols-1 gap-12 pt-6 md:grid-cols-2">
+      <ProductImage
+        cartProduct={cartProduct}
+        product={product}
+        handleColorSelect={handleColorSelect}
+      />
       <div className="flex flex-col gap-2 text-sm text-slate-500">
         <h2 className="text-3xl font-medium text-slate-700">{product.name}</h2>
         <div className="flex items-center gap-2">
