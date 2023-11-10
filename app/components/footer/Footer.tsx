@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Container from "../Container";
 import FooterList from "./FooterList";
+import { MdFacebook } from "react-icons/md";
+import { AiOutlineTwitter, AiFillInstagram } from "react-icons/ai";
+import { BsYoutube } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -25,19 +28,31 @@ const Footer = () => {
           </FooterList>
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h3 className="font-bold text-base mb-2">About Us</h3>
-            At our electronics store, we are dedicated to providing the latest
-            and greatest devices and accessories to our customers. With a wide
-            selection of phones, TVs, laptops, watches, and accessories. @ 2023
-            E~Shop. All rights reserved.
+            <p className="mb-2">
+              At our electronics store, we are dedicated to providing the latest
+              and greatest devices and accessories to our customers. With a wide
+              selection of phones, TVs, laptops, watches, and accessories.
+            </p>
+            <p className="mt-2 italic">
+              &copy; {new Date().getFullYear()} E-Shop. All rights reserved.
+            </p>
           </div>
           <FooterList>
             <h3 className="font-bold text-base mb-2">Follow Us</h3>
-            <Link href="#">Phones</Link>
-            <Link href="#">Laptops</Link>
-            <Link href="#">Desktops</Link>
-            <Link href="#">Watches</Link>
-            <Link href="#">TVs</Link>
-            <Link href="#">Accessories</Link>
+            <div className="flex gap-2">
+              <Link href="#">
+                <MdFacebook size={24} className="text-blue-600" />
+              </Link>
+              <Link href="#">
+                <AiOutlineTwitter size={24} className="text-blue-bird" />
+              </Link>
+              <Link href="#">
+                <AiFillInstagram size={24} className="text-pink-400" />
+              </Link>
+              <Link href="#">
+                <BsYoutube size={24} className="text-red-600" />
+              </Link>
+            </div>
           </FooterList>
         </div>
       </Container>
